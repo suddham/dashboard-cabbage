@@ -1,9 +1,28 @@
 <template>
-  <div></div>
+  <div>
+    <header><h1>Style Guide</h1></header>
+    <style-section>
+      <template slot="title">Colors</template>
+      <colors />
+    </style-section>
+    <style-section>
+      <template slot="title">Gradients</template>
+      <!-- Component: as gradients, font and icons -->
+      <gradients />
+    </style-section>
+  </div>
 </template>
 
 <script>
-export default {}
-</script>
+import StyleSection from '@/components/styleguide/StyleSection.vue'
+import Colors from '@/components/styleguide/Colors.vue'
+import Gradients from '@/components/styleguide/Gradients.vue'
 
-<style scoped></style>
+export default {
+  components: {
+    StyleSection,
+    Colors,
+    Gradients
+  }
+}
+</script>

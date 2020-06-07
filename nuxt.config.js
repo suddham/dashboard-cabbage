@@ -34,7 +34,7 @@ module.exports = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [require('tailwindcss-plugins/gradients')],
   /*
    ** Nuxt.js dev-modules
    */

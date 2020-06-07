@@ -4,13 +4,13 @@
     <nav>
       <ul class="py-4">
         <li class="py-2">
-          <nuxt-link to="/" class="nav-link">
-            <!-- icon svg -->
+          <nuxt-link to="/" class="nav-link" title="Main Dashboard">
+            <charts class="w-6 h-6 md:w-8 md:h-8 fill-current" />
           </nuxt-link>
         </li>
         <li class="py-2">
-          <nuxt-link to="/styleguide" class="nav-link">
-            <!-- icon svg -->
+          <nuxt-link to="/styleguide" class="nav-link" title="Style Guide">
+            <bone class="w-6 h-6 md:w-8 md:h-8 fill-current" />
           </nuxt-link>
         </li>
       </ul>
@@ -20,10 +20,14 @@
 
 <script>
 import Logo from '@/components/Logo.vue'
+import Bone from '@/components/icons/Bone.vue'
+import Charts from '@/components/icons/Charts.vue'
+
 export default {
   components: {
-    Logo
-    // Icons
+    Logo,
+    Bone,
+    Charts
   }
 }
 </script>
