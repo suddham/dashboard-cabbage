@@ -35,6 +35,9 @@ module.exports = {
           900: '#861f48'
         }
       },
+      fontSize: {
+        giant: '8rem'
+      },
       fontFamily: {
         sans: [
           '"Fira Sans"',
