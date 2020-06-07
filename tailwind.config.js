@@ -1,4 +1,4 @@
-const plugin = require('tailwindcss/plugin')
+const { PluginUtility, PluginGradients } = require('./plugins/tailwind/utils')
 
 module.exports = {
   purge: [],
@@ -7,6 +7,45 @@ module.exports = {
   important: false,
   separator: ':',
   theme: {
+    extend: {
+      colors: {
+        primary: {
+          50: '#e0f3ed',
+          100: '#b3e1d1',
+          200: '#81ceb5',
+          300: '#4fba98',
+          400: '#27ab83',
+          500: '#009c71',
+          600: '#008e65',
+          700: '#007e56',
+          800: '#006e49',
+          900: '#00522f'
+        },
+
+        complementary: {
+          50: '#fce5ea',
+          100: '#f9bdcb',
+          200: '#f592a9',
+          300: '#f06988',
+          400: '#ea4c6f',
+          500: '#e63658',
+          600: '#d53156',
+          700: '#c02c52',
+          800: '#ab274f',
+          900: '#861f48'
+        }
+      },
+      fontFamily: {
+        sans: [
+          '"Fira Sans"',
+          'system-ui',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"Segoe UI"'
+        ]
+      }
+    },
+
     screens: {
       sm: '640px',
       md: '768px',
@@ -19,50 +58,6 @@ module.exports = {
 
       black: '#000',
       white: '#fff',
-
-      primary: {
-        50: '#e0f3ed',
-        100: '#b3e1d1',
-        200: '#81ceb5',
-        300: '#4fba98',
-        400: '#27ab83',
-        500: '#009c71',
-        600: '#008e65',
-        700: '#007e56',
-        800: '#006e49',
-        900: '#00522f'
-      },
-
-      complementary: {
-        50: '#fce5ea',
-        100: '#f9bdcb',
-        200: '#f592a9',
-        300: '#f06988',
-        400: '#ea4c6f',
-        500: '#e63658',
-        600: '#d53156',
-        700: '#c02c52',
-        800: '#ab274f',
-        900: '#861f48'
-      },
-
-      gradients: (theme) => ({
-        'primary-45': [
-          '45deg',
-          theme('colors.primary.700'),
-          theme('colors.primary.300')
-        ],
-        'complementary-45': [
-          '45deg',
-          theme('colors.complementary.700'),
-          theme('colors.complementary.300')
-        ],
-        'mixed-45': [
-          '45deg',
-          theme('colors.complementary.300'),
-          theme('colors.primary.100')
-        ]
-      }),
 
       gray: {
         100: '#f7fafc',
@@ -681,7 +676,24 @@ module.exports = {
       '500': '500ms',
       '700': '700ms',
       '1000': '1000ms'
-    }
+    },
+    gradients: (theme) => ({
+      'primary-45': [
+        '45deg',
+        theme('colors.primary.700'),
+        theme('colors.primary.300')
+      ],
+      'complementary-45': [
+        '45deg',
+        theme('colors.complementary.700'),
+        theme('colors.complementary.300')
+      ],
+      'mixed-45': [
+        '45deg',
+        theme('colors.complementary.300'),
+        theme('colors.primary.100')
+      ]
+    })
   },
   variants: {
     accessibility: ['responsive', 'focus'],
@@ -783,27 +795,5 @@ module.exports = {
     transitionDelay: ['responsive']
   },
   corePlugins: {},
-  plugins: [
-    plugin(function({ addUtilities }) {
-      const newUtilities = {
-        '.rotate-y-0': {
-          transform: 'rotateY(0deg)'
-        },
-        '.rotate-y-180': {
-          transform: 'rotateY(180deg)'
-        },
-        '.transform-style-3d': {
-          transformStyle: 'preserve-3d'
-        },
-        '.backface-hidden': {
-          backfaceVisibility: 'hidden'
-        },
-        '.perspective': {
-          perspective: '1000px'
-        }
-      }
-
-      addUtilities(newUtilities, ['group-hover'])
-    })
-  ]
+  plugins: [PluginUtility, PluginGradients]
 }

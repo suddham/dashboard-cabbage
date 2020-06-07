@@ -13,10 +13,28 @@
           >
             <div class="card__front">
               <!-- Front Card Content-->
+              <p
+                class="rounded-full w-12 h-12 shadow-inner pb-1"
+                :class="item.color"
+              ></p>
+              <p
+                class="text-center text-gray-700 pt-2 font-medium leading-none"
+                :class="item.hex"
+              >
+                {{ item.hex }}
+              </p>
             </div>
 
             <div :class="item.color" class="card__back">
               <!--Back Card Content-->
+              <p class="text-center max-w-full text-white">
+                <span
+                  class="block leading-tight truncate"
+                  :title="color.name"
+                  >{{ color.name }}</span
+                >
+                <span class="text-xl font-bold">{{ item.name }}</span>
+              </p>
             </div>
           </div>
         </div>

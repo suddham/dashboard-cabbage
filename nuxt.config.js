@@ -26,7 +26,7 @@ module.exports = {
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#fff' },
+  loading: { color: '#007e56' },
   /*
    ** Global CSS
    */
@@ -34,7 +34,7 @@ module.exports = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [require('tailwindcss-plugins/gradients')],
+  plugins: [],
   /*
    ** Nuxt.js dev-modules
    */
