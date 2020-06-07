@@ -1,7 +1,7 @@
 const { PluginUtility, PluginGradients } = require('./plugins/tailwind/utils')
 
 module.exports = {
-  purge: ['./src/**/*.html', './src/**/*.vue', './src/**/*.jsx'],
+  purge: ['./components/**/*.vue', './pages/**/*.vue', './layouts/**/*.vue'],
   target: 'relaxed',
   prefix: '',
   important: false,
