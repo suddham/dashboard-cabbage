@@ -1,0 +1,42 @@
+<template>
+  <div class="bg-white py-4 px-3 md:py-6 md:px-8">
+    <logo class="w-10 h-10 md:w-12 md:h-12"></logo>
+    <nav>
+      <ul class="py-4">
+        <li class="py-2">
+          <nuxt-link to="/" class="nav-link">
+            <!-- icon svg -->
+          </nuxt-link>
+        </li>
+        <li class="py-2">
+          <nuxt-link to="/styleguide" class="nav-link">
+            <!-- icon svg -->
+          </nuxt-link>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</template>
+
+<script>
+import Logo from '@/components/Logo.vue'
+export default {
+  components: {
+    Logo
+    // Icons
+  }
+}
+</script>
+
+<style scoped>
+.nav-link {
+  @apply transition-all duration-1000 ease-in-out block w-10 h-10 bg-white text-primary-400 rounded-full flex items-center justify-center shadow-inner;
+  @screen md {
+    @apply w-12 h-12;
+  }
+}
+.nav-link:hover,
+.nuxt-link-exact-active {
+  @apply bg-primary-400 text-white shadow-lg;
+}
+</style>
